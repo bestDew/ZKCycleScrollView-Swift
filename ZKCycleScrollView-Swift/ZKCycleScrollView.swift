@@ -339,7 +339,7 @@ public enum ZKScrollDirection: Int {
         
         if numberOfItems < 2 || !isAutoScroll || autoScrollInterval <= 0.0 { return }
         timer = Timer.scheduledTimer(timeInterval: autoScrollInterval, target: self, selector: #selector(automaticScroll), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer!, forMode: .common)
+        RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
     }
     
     private func updatePageControl() {
