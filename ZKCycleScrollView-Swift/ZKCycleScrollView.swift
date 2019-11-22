@@ -210,7 +210,7 @@ public enum ZKScrollDirection: Int {
     /// Scroll to page
     open func scrollToItem(at index: Int, animated: Bool) {
         let num = numberOfAddedCells()
-        guard index >= 0 && index < numberOfItems - 1 - num else {
+        guard index >= 0 && index <= numberOfItems - 1 - num else {
             print("⚠️attempt to scroll to invalid index:\(index)")
             return
         }
